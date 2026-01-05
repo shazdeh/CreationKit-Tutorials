@@ -61,13 +61,13 @@ equal to some text. **Keys are prefixed with a dollar sign**, followed
 by a unique identifier. For example, from earlier screenshot, we have
 the \"Main Quest Entrances\" text here for example:
 
-```\_MQEntranceSafe_M = AddMenuOption(\"Main Quest Entrances\",
-\_MQEntranceOptionList\[rQuest.MQEntranceOption\])```
+```_MQEntranceSafe_M = AddMenuOption("Main Quest Entrances",
+_MQEntranceOptionList[rQuest.MQEntranceOption])```
 
 We replace that with:
 
-```\_MQEntranceSafe_M = AddMenuOption(\"\$MAINENTRANCE\",
-\_MQEntranceOptionList\[rQuest.MQEntranceOption\])```
+```_MQEntranceSafe_M = AddMenuOption("$MAINENTRANCE",
+_MQEntranceOptionList[rQuest.MQEntranceOption])```
 
 I like to use all uppercase for language keys, but that's just my
 preference. Beware however, the **keys are case-sensitive**.
@@ -77,8 +77,8 @@ avoid conflicts, make sure to always prefix the keys with something
 unique, an abbreviation of your mod's name, or your username, or what
 you prefer. Let's update that line:
 
-```\_MQEntranceSafe_M = AddMenuOption(\"\$COOL_MAINENTRANCE\",
-\_MQEntranceOptionList\[rQuest.MQEntranceOption\])```
+```_MQEntranceSafe_M = AddMenuOption("$COOL_MAINENTRANCE",
+_MQEntranceOptionList[rQuest.MQEntranceOption])```
 
 Awesome. Now let's move to the language file. In it, you put each key on
 a separate line (so one *key : text* pair on each line). Start with the
