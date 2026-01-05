@@ -1,9 +1,6 @@
 # Localizing MCM Menus
 
-## Table of Contents
-{:toc}
-
-# The Problem
+## The Problem
 
 Not everyone plays Skyrim in English. The game has been officially
 translated into 8 other languages (and more, unofficially). So as mod
@@ -12,7 +9,7 @@ make the translation process as painless as possible. This document
 covers how to properly setup the MCM configuration menu for localization
 (I hope in the future I can expand this to cover quests and dialog too).
 
-So, consider our SKI_ConfigBase script, in OnPageReset() we're adding
+So, consider our SKI_ConfigBase script, in `OnPageReset()` we're adding
 the options that display in the MCM page:
 
 ![](media/image1.png)
@@ -30,7 +27,7 @@ causes script issues.
 So tldr; this is pure awfulness. Lucky for us, we can use translation
 files to separate out the texts inside the MCM scripts.
 
-# Translation Files
+## Translation Files
 
 Translation files are .txt file located in \"Interface\\Translations\\\"
 directory inside your mod. First rule is, you need a plugin file (ESP,
@@ -52,7 +49,7 @@ menu; other text editors have similar options:
 
 ![](media/image3.png)
 
-# Formatting the language file
+## Formatting the language file
 
 So, we have our language file. Next step, we must cut the texts out of
 our scripts and put them here. Each individual text (read: string) must
@@ -84,7 +81,7 @@ Awesome. Now let's move to the language file. In it, you put each key on
 a separate line (so one *key : text* pair on each line). Start with the
 key, **followed by a tab** character, followed by your actual text:
 
-\$COOL_MAINENTRANCE Main Quest Entrances
+```$COOL_MAINENTRANCE	Main Quest Entrances```
 
 ![](media/image4.png)
 
@@ -105,7 +102,7 @@ files. This also safeguards against updates since now our worst-case
 scenario is the player with an un-updated language file will simply miss
 some texts, no harm is done.
 
-# Setting up other languages
+## Setting up other languages
 
 Here's a new problem. When people use our mod in a non-English setup,
 they won't be able to see any of it. This is because when a language
@@ -120,7 +117,7 @@ file for all of them:
 
 And that's that.
 
-# MCM Helper
+## MCM Helper
 
 [MCM Helper](https://www.nexusmods.com/skyrimspecialedition/mods/53000)
 is an amazing tool. Not only it simplifies the process of making MCM
@@ -128,10 +125,10 @@ menus, but the [persistent storage
 feature](https://github.com/Exit-9B/MCM-Helper/wiki/Setting-Types%2C-Storage%2C-and-Persistence#modsettings)
 is an absolute godsend. MCM Helper uses a .JSON file for defining the
 options. The process is not really different, instead of adding texts
-into the .json file we use \$KEY keys and translation files. The only
-thing of note is in the .json we have two properties, modName and
-displayName. modName is the actual plugin file's name that the MCM
-Helper will attach itself to, whereas the displayName is the text of
+into the .json file we use `$KEY` keys and translation files. The only
+thing of note is in the .json we have two properties, `modName` and
+`displayName`. `modName` is the actual plugin file's name that the MCM
+Helper will attach itself to, whereas the `displayName` is the text of
 mod's name that is displayed in MCM. You must only translate the latter,
 like so:
 
