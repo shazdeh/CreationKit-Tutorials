@@ -56,8 +56,8 @@ style="width:1.94052in;height:2.94161in" />
 Also disable the Respawns checkbox so that after the cell resets, the
 item does not come back.
 
-> [!NOTE]
 > **Merchant’s faction is not showing in the list!**
+>
 > If the merchant faction is not showing up here in that list, don’t
 > panic! All you need to do is to edit the Faction form, and in the
 > General tab make sure Can Be Owner option is ticked:
