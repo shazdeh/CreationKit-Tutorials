@@ -1,0 +1,1 @@
+pandoc -f docx+styles "document.docx" --extract-media=images --lua-filter=styles.lua -o README.md -t gfm
