@@ -56,26 +56,14 @@ style="width:1.94052in;height:2.94161in" />
 Also disable the Respawns checkbox so that after the cell resets, the
 item does not come back.
 
-<div custom-style="Notice">
-
-**Merchant’s faction is not showing in the list!**
-
-</div>
-
-<div custom-style="Notice">
-
-If the merchant faction is not showing up here in that list, don’t
-panic! All you need to do is to edit the Faction form, and in the
-General tab make sure Can Be Owner option is ticked:
-
-</div>
-
-<div custom-style="Notice">
-
-<img src="media/image4.png"
-style="width:2.75652in;height:2.11138in" />
-
-</div>
+> [!NOTE]
+> **Merchant’s faction is not showing in the list!**
+> If the merchant faction is not showing up here in that list, don’t
+> panic! All you need to do is to edit the Faction form, and in the
+> General tab make sure Can Be Owner option is ticked:
+> 
+> <img src="media/image4.png"
+> style="width:2.75652in;height:2.11138in" />
 
 If you’re putting your item out in the void, you might want to tick the
 “Don’t Havok Settle” option as well, this prevents the object from
