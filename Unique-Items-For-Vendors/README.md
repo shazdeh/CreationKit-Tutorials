@@ -1,50 +1,3 @@
-# Contents
-
-<div custom-style="toc 1">
-
-[<span custom-style="Hyperlink">Method 1: Adding item to a shop</span>
-[1](#method-1-adding-item-to-a-shop)](#method-1-adding-item-to-a-shop)
-
-</div>
-
-<div custom-style="toc 2">
-
-[<span custom-style="Hyperlink">Prevent player from stealing it</span>
-[4](#prevent-player-from-stealing-it)](#prevent-player-from-stealing-it)
-
-</div>
-
-<div custom-style="toc 1">
-
-[<span custom-style="Hyperlink">Method 2: Using LeveledItems</span>
-[4](#method-2-using-leveleditems)](#method-2-using-leveleditems)
-
-</div>
-
-<div custom-style="toc 1">
-
-[<span custom-style="Hyperlink">Method 3: Using a Quest to spawn the
-item</span>
-[9](#method-3-using-a-quest-to-spawn-the-item)](#method-3-using-a-quest-to-spawn-the-item)
-
-</div>
-
-<div custom-style="toc 1">
-
-[<span custom-style="Hyperlink">Help! Item doesn’t appear in
-shop!</span>
-[13](#help-item-doesnt-appear-in-shop)](#help-item-doesnt-appear-in-shop)
-
-</div>
-
-<div custom-style="toc 1">
-
-[<span custom-style="Hyperlink">Perk to reduce the price of unique
-items</span>
-[16](#perk-to-reduce-the-price-of-unique-items)](#perk-to-reduce-the-price-of-unique-items)
-
-</div>
-
 # Goal
 
 In this tutorial, we'll add unique items to a shop. These items will be
@@ -226,13 +179,9 @@ select Edit Source, then add:
     LeveledItem Property MyLeveledItem Auto
 
     Event OnContainerChanged(ObjectReference akNewContainer, ObjectReference akOldContainer)
-
-    If akNewContainer == Game.GetPlayer()
-
-    MyLeveledItem.SetChanceNone(100)
-
-    EndIf
-
+        If akNewContainer == Game.GetPlayer()
+            MyLeveledItem.SetChanceNone(100)
+        EndIf
     EndEvent
 
 How can we run a code when player purchases the item? Every actor (=\>
@@ -268,23 +217,15 @@ this is the more optimized script:
     LeveledItem Property MyLeveledItem Auto
 
     Auto State Waiting
-
-    Event OnContainerChanged(ObjectReference akNewContainer, ObjectReference akOldContainer)
-
-    If akNewContainer == Game.GetPlayer()
-
-    MyLeveledItem.SetChanceNone(100)
-
-    GoToState("Purchased")
-
-    EndIf
-
-    EndEvent
-
+        Event OnContainerChanged(ObjectReference akNewContainer, ObjectReference akOldContainer)
+            If akNewContainer == Game.GetPlayer()
+                MyLeveledItem.SetChanceNone(100)
+                GoToState("Purchased")
+            EndIf
+        EndEvent
     EndState
 
     State Purchased
-
     EndState
 
 By default our script is goes to the “Waiting” state (because of the
@@ -344,13 +285,9 @@ to MyTomatoRef:
     Scriptname MyUniqueTomato_Script extends ReferenceAlias
 
     Event OnContainerChanged(ObjectReference akNewContainer, ObjectReference akOldContainer)
-
-    If akNewContainer == Game.GetPlayer()
-
-    GetOwningQuest().Stop()
-
-    EndIf
-
+        If akNewContainer == Game.GetPlayer()
+            GetOwningQuest().Stop()
+        EndIf
     EndEvent
 
 This script is even simpler than we had before, we still listen for
@@ -501,17 +438,11 @@ this is all of it:
     Float Property fReduceBy Auto
 
     Event OnEffectStart(Actor akTarget, Actor akCaster)
-
-    Int i = UniqueItems_List.GetSize()
-
-    While i > 0
-
-    i -= 1
-
-    UniqueItems_List.GetAt(i).SetGoldValue( ( UniqueItems_List.GetAt(i).GetGoldValue() * fReduceBy ) as Int )
-
-    EndWhile
-
+        Int i = UniqueItems_List.GetSize()
+        While i > 0
+            i -= 1
+            UniqueItems_List.GetAt(i).SetGoldValue( ( UniqueItems_List.GetAt(i).GetGoldValue() * fReduceBy ) as Int )
+        EndWhile
     EndEvent
 
 So basically when the `OnEffectStart` happens (when the MagicEffect is
