@@ -1,4 +1,4 @@
-# Monitor Spells and Ring of Draconic Burde
+# Monitor Spells and Ring of Draconic Burden
 
 # Intro
 
@@ -225,8 +225,7 @@ our Property in the script exactly as it’s named in the game, we can
 just hit Auto Fill button and CK will automatically connect that
 Property to our perk.
 
-| Similar to Perk to Apply option in ME forms, the AddPerk() function also only works for the player. You cannot use this to dynamically give other actors perks in gameplay time. |
-|----|
+> Similar to Perk to Apply option in ME forms, the AddPerk() function also only works for the player. You cannot use this to dynamically give other actors perks in gameplay time.
 
 # Problem: changes to dragonsouls count
 
@@ -257,7 +256,7 @@ gives us the ability to have a callback when player absorbs a dragon
 soul, but that still won’t be enough for us because we need to know when
 the player spends that soul as well.
 
-If you’d like to review everything we’ve built so far, check the files under [Files/Ring of Draconic Burdon Part 2]() directory.
+If you’d like to review everything we’ve built so far, check the files under [Files/Ring of Draconic Burdon Part 2](https://github.com/shazdeh/CreationKit-Tutorials/tree/main/Monitor-Spells-and-Ring-of-Draconic-Burdon/Files/Ring%20of%20Draconic%20Burdon%20Part%202) directory.
 
 # Spell Conditions
 
@@ -341,7 +340,7 @@ Time to test this in game. Use the console command:
 
     player.addspell PlayerSwim_Ab
 
-You can review the code in Files/Player Swims Monitor. Now you should
+You can review the code in [Files/Player Swims Monitor](https://github.com/shazdeh/CreationKit-Tutorials/tree/main/Monitor-Spells-and-Ring-of-Draconic-Burdon/Files/Player%20Swims%20Monitor). Now you should
 see notification pops up whenever you go in water, and out. Magnificent!
 This is unlimited power at our disposal, as there’s a plethora of
 Condition Functions (see:
@@ -447,7 +446,7 @@ perk is always in effect while player is carrying the item (even when
 not equipped), which isn’t a performance impact by any means, but it’s
 not good enough nonetheless!
 
-If you’d like to review everything we’ve built so far, check the files under [Files/Ring of Draconic Burdon Part 1]() directory.
+If you’d like to review everything we’ve built so far, check the files under [Files/Ring of Draconic Burdon Part 1](https://github.com/shazdeh/CreationKit-Tutorials/tree/main/Monitor-Spells-and-Ring-of-Draconic-Burdon/Files/Ring%20of%20Draconic%20Burdon%20Part%201) directory.
 
 # Scripted Spell Casting
 
