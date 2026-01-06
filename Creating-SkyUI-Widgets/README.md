@@ -87,7 +87,7 @@ for Hud widgets, our script must extend the `SKI_WidgetBase` script,
 this way our script inherits a lot of functionality that otherwise we’d
 have to implement ourselves. So change the first line to:
 
-`Scriptname SkullHud_Widget extends SKI_WidgetBase`
+    Scriptname SkullHud_Widget extends SKI_WidgetBase
 
 And attempt to compile. Most likely, the compilation will fail. This is
 because the compiler is not familiar with `SKI_WidgetBase` so we need to
@@ -754,8 +754,6 @@ Recompile and check in game.
 > properties that you add are not filled in when you load an existing
 > save. So use the COC command to start again on a new save, or however
 > other method you prefer to start a new save (like Alternate Start mods).
-
-</div>
 
 # Papyrus and ActionScript Communication ++
 
